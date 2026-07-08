@@ -1,16 +1,3 @@
-#!/usr/bin/env python3
-"""
-================================================================================
-LINK BUDGET CALCULATOR  (Pure Python - No External Dependencies)
-================================================================================
-Accepts:  transmit power, antenna gain, cable loss, frequency, distance
-Calculates: free-space path loss, received signal strength
-Produces:  console reports + HTML file with SVG graphs
-
-No numpy or matplotlib required. Uses only Python standard library.
-================================================================================
-"""
-
 import math
 import os
 
@@ -23,26 +10,8 @@ class LinkBudgetCalculator:
     FSPL (dB) = 20*log10(d) + 20*log10(f) + 32.45
     """
 
-    def __init__(self, tx_power_dbm, tx_gain_dbi, rx_gain_dbi,
-                 cable_loss_db, frequency_mhz, distance_km):
-        """
-        Initialize link budget calculator.
-
-        Parameters:
-        -----------
-        tx_power_dbm : float
-            Transmit power in dBm (e.g., 20 dBm = 100 mW)
-        tx_gain_dbi : float
-            Transmit antenna gain in dBi (isotropic reference)
-        rx_gain_dbi : float
-            Receive antenna gain in dBi
-        cable_loss_db : float
-            Total cable and connector losses in dB
-        frequency_mhz : float
-            Carrier frequency in MHz
-        distance_km : float or list
-            Distance(s) in kilometers
-        """
+    def __init__(self, tx_power_dbm, tx_gain_dbi, rx_gain_dbi, cable_loss_db, frequency_mhz, distance_km):
+                     
         self.tx_power_dbm = tx_power_dbm
         self.tx_gain_dbi = tx_gain_dbi
         self.rx_gain_dbi = rx_gain_dbi
